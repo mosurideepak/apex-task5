@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ApexPlanet Internship - Task 5 (Final Project)</title>
+  <style>
+    :root {
+      --accent:#2563eb;
+      --accent-2:#1e40af;
+      --muted:#6b7280;
+      --bg:#f9fafb;
+      --card:#fff;
+    }
+    body {margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#111827}
+    header {background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:16px 24px}
+    nav a {color:#fff;text-decoration:none;margin-right:12px;font-weight:600}
+    .container {max-width:1100px;margin:auto;padding:20px}
+    .card {background:var(--card);border-radius:12px;padding:16px;margin-bottom:20px;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+    h1,h2,h3{margin-top:0}
+    .hero {text-align:center;padding:40px 20px}
+    .hero h1{font-size:32px;margin-bottom:12px}
+    .projects {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .project{padding:16px;border-radius:12px;background:linear-gradient(180deg,#f9fafb,#f1f5f9)}
+    .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:var(--accent);color:#fff;font-size:12px}
+    .btn{padding:8px 12px;border:none;border-radius:8px;cursor:pointer;background:var(--accent);color:#fff}
+    footer{text-align:center;font-size:14px;color:var(--muted);margin-top:20px}
+    img{max-width:100%;border-radius:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <span style="font-weight:700">ApexPlanet Internship • Task 5</span>
+      <a href="#about">About</a>
+      <a href="#app">Final Project</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="about">
+    <h1>Final Project & Optimization</h1>
+    <p>Building a complete web application, optimizing performance, and ensuring cross-browser compatibility.</p>
+  </section>
+
+  <main class="container">
+    <!-- Capstone Project -->
+    <section id="app" class="card">
+      <h2>Capstone Web Application</h2>
+      <p>This section simulates a final project such as an advanced portfolio or mini e-commerce site using HTML, CSS, and JavaScript.</p>
+      <div class="projects">
+        <div class="project">
+          <h3>🏗 Build a Full Web Application</h3>
+          <p class="small">Integrated all skills to create a dynamic application with multiple features in a single project.</p>
+        </div>
+        <div class="project">
+          <h3>⚡ Optimize for Performance</h3>
+          <p class="small">Applied optimization techniques like minified CSS/JS, lazy loading for images, and reducing HTTP requests to ensure fast load times.</p>
+        </div>
+        <div class="project">
+          <h3>🌐 Cross-Browser & Responsive</h3>
+          <p class="small">Tested on Chrome, Firefox, Safari, and mobile browsers to guarantee smooth, responsive design and compatibility.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Product List -->
+    <section class="card">
+      <h2>Demo Product Showcase</h2>
+      <div id="product-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px"></div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:guriramamanohari@gmail.com">guriramamanohari@gmail.com</a></p>
+      <p>LinkedIn: <a href="https:/h/www.linkedin.com/in/rama-manohari-guri-871236292">https:/h/www.linkedin.com/in/rama-manohari-guri-871236292</a></p>
+    </section>
+  </main>
+
+  <script>
+    // Demo Product Data
+    const products=[
+      {id:1,name:"Smartphone X",price:29999,img:"https://via.placeholder.com/200",desc:"High performance mobile"},
+      {id:2,name:"Gaming Laptop",price:79999,img:"https://via.placeholder.com/200",desc:"Powerful gaming laptop"},
+      {id:3,name:"Wireless Headphones",price:3999,img:"https://via.placeholder.com/200",desc:"Noise cancelling audio"},
+      {id:4,name:"Smartwatch",price:6999,img:"https://via.placeholder.com/200",desc:"Track fitness and health"}
+    ];
+    const list=document.getElementById("product-list");
+    products.forEach(p=>{
+      const div=document.createElement("div");
+      div.className="project";
+      div.innerHTML=`<img src="${p.img}" alt="${p.name}"/><h3>${p.name}</h3><p>${p.desc}</p><p><b>₹${p.price}</b></p><button class='btn'>Buy</button>`;
+      list.appendChild(div);
+    });
+  </script>
+</body>
+</html>
